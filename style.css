@@ -1,0 +1,167 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#app {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.carousel {
+  flex: 1 0 25%;
+  position: relative;
+  margin: auto;
+}
+
+.videoDiv {
+  position: relative;
+  flex: 1 0 25%;
+}
+
+.imageDiv {
+  flex: 1 0 25%;
+  position: relative;
+  max-width: 50%;
+}
+
+.videoDiv video {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.child {
+  width: 100%;
+  display: none;
+}
+
+.imageDiv img {
+  display: block;
+  width: 100%;
+}
+
+img {
+  display: block;
+}
+
+.captionDiv {
+  position: absolute;
+  background: #355C7D;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(63deg, #C06C84, #6C5B7B, #355C7D);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(63deg, #C06C84, #6C5B7B, #355C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: all 400ms;
+}
+
+.captionDiv:hover {
+  opacity: .9;
+  transition: all 400ms;
+}
+
+.caption {
+  font-family: monospace;
+  margin: 0;
+  text-align: center;
+  padding: 30px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.caption span {
+  display: block;
+  padding: 10px;
+  font-size: 1.3em;
+}
+
+.caption .stats {
+  display: flex;
+  justify-content: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  z-index: 99;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 900px) {
+  .carousel {
+    flex: 1 0 50%;
+  }
+  
+  .videoDiv {
+    flex: 1 0 50%;
+  }
+  
+  .imageDiv {
+    flex: 1 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .carousel {
+    flex: 1 0 100%;
+  }
+  
+  .videoDiv {
+    flex: 1 0 100%;
+  }
+  
+  .imageDiv {
+    flex: 1 0 100%;
+    max-width: 100%;
+  }
+}
