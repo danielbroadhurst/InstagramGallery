@@ -124,7 +124,9 @@ function createMediaEl(type, classStr, imageUrl) {
     attributes: {
       class: classStr,
       src: imageUrl,
-      controls: type == 'video' ? true : false
+      controls: type == 'video' ? true : false,
+      controlslist: type == 'video' ? 'nodownload nofullscreen noremoteplayback'  : false,
+      disablePictureInPicture: type == 'video' ? true : false,
     }
   }
 }
