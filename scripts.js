@@ -102,7 +102,6 @@ getMediaNodes()
 
 // Helper Functions
 function createDomElements(options) {
-  console.log(options);
   let element = document.createElement(options.type)
   for (const attr in options.attributes) {
     if (attr === 'text') {
@@ -210,7 +209,7 @@ function plusSlides(n, no) {
 
 function showSlides(n, no) {
   let i;
-  var x = document.getElementsByClassName(slideId[no]);
+  let x = document.getElementsByClassName(slideId[no]);
   if (n > x.length) {
     slideIndex[no] = 1
   }
@@ -224,18 +223,18 @@ function showSlides(n, no) {
 }
 
 // User Access Token
-// window.fbAsyncInit = function() {
-//   FB.init({
-//     appId            : '155511955386765',
-//     autoLogAppEvents : true,
-//     xfbml            : true,
-//     version          : 'v7.0'
-//   });
-//   FB.getLoginStatus(function(response) {
-//     if (response.status === 'connected') {
-//       var accessToken = response.authResponse.accessToken;
-//       console.log(accessToken);
+window.fbAsyncInit = function() {
+  FB.init({
+    appId            : '155511955386765',
+    autoLogAppEvents : true,
+    xfbml            : true,
+    version          : 'v7.0'
+  });
+  FB.getLoginStatus(function(response) {
+    if (response.status === 'connected') {
+      var accessToken = response.authResponse.accessToken;
+      console.log(accessToken);
 
-//     } 
-//   });
-// };
+    } 
+  });
+};
