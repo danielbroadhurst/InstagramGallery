@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: InstagramGallery
+  annotations:
+    github.com/project-slug: danielBroadhurst/InstagramGallery
+spec:
+  type: other
+  lifecycle: unknown
+  owner: dan
